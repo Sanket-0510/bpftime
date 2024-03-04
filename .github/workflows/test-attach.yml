@@ -46,4 +46,4 @@ jobs:
           
       - name: Run syscall trace uprobe attach tests
         run: |
-          ./build/attach/syscall_trace_attach_impl/bpftime_syscall_trace_attach_tests
+         sudo ./build/attach/syscall_trace_attach_impl/bpftime_syscall_trace_attach_tests
