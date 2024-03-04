@@ -21,7 +21,7 @@ jobs:
           - fedora-39
     container:
       image: "manjusakalza/bpftime-base-image:${{matrix.container}}"
-      options: --privileged
+      options: --privileged -v /sys/kernel/debug/:/sys/kernel/debug:rw -v /sys/kernel/tracing:/sys/kernel/tracing:rw
     steps:
       - uses: actions/checkout@v2
         with:
@@ -47,3 +47,4 @@ jobs:
       - name: Run syscall trace uprobe attach tests
         run: |
          sudo ./build/attach/syscall_trace_attach_impl/bpftime_syscall_trace_attach_tests
+         
