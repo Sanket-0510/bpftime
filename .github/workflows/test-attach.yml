@@ -48,3 +48,8 @@ jobs:
         run: |
          ./build/attach/syscall_trace_attach_impl/bpftime_syscall_trace_attach_tests
          
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: Sanket-0510/bpftime
